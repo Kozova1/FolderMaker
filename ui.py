@@ -5,8 +5,7 @@ from PySide2.QtWidgets import \
     QTreeView, QLineEdit,\
     QVBoxLayout, QGridLayout,\
     QPushButton, QWidget,\
-    QApplication, QMessageBox,\
-    QIcon
+    QApplication, QMessageBox
 from lib.lib import conf_to_starr, split_types, create_dirs
 
 ROOT_PATH = r'/home/kozova1/FolderMaker/test'
@@ -31,7 +30,7 @@ class App(QWidget):
             msg.exec()
         except FileExistsError as file_ex:
             msg = QMessageBox()
-            msg.setText(f'Error! Directory {str(file_ex)} already exists!')
+            msg.setText(f'Error! Directory already exists! Exception: {str(file_ex)}')
             msg.exec()
 
     def init_ui(self):
